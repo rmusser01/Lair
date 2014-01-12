@@ -12,6 +12,9 @@ Lair is a web application framework written in Meteor.js. It's goal is _______.
 [Contact Us/Get involved](#contact)
 
 ##<a name="whatis"></a> What is Lair?
+
+
+
 Data sets are sorted into projects, for coherence, while data within projects are sorted by
 -Hosts
         -List of hosts sorted
@@ -34,12 +37,18 @@ Data sets are sorted into projects, for coherence, while data within projects ar
 
 Like the saying, a picture is worth a thousand words, here's a picture walkthrough of Lair in action so that you  can 
 see what it might help you do.
+
+
 In this picture, we see Lair after a fresh install/clear of all projects.
 ![Feeling Fresh](/path/to/image.jpg "FrontFresh")
+
+
 Here, we have an image of a project being created, with the name "Test", and the description "chicken".
 ![Test1](/path/to/image.jpg "Testpage")
-This picture shows the Services section with the nmap scan results of an "-A" scan on scanme.nmap.org imported by a Lair 
-drone into the database showing. This was performed with the lairdrone client and the command "drone-nmap <pid> 
+This picture shows the Services section with the nmap scan results of an "-A" scan on scanme.nmap.org imported by a Lair
+drone into the database showing. 
+
+This was performed with the lairdrone client and the command "drone-nmap <pid> 
 /path/to/nmap.xml" "pid" being the project Id# available from the lair server homepage on the upper right. 
 ![Test2](/path/to/image.jpg "Testresults")
 Currently, there are drones for Nmap, Burp, Nessus, and Nexpose.
@@ -114,6 +123,7 @@ Required Applications:
 	        	
 Steps performed in Short:
 * Install stunnel
+* Edit stunnel.conf file
 * Install Node.js+Meteor.js
 * Create mongoDB db for Lair as well as users/admins for said db
 * Launch MongoDB daemon listener on 127.0.0.1:11015
@@ -124,11 +134,11 @@ Walkthrough Installation:
 * Install Node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 * Install Meteor.js
 * Generate key pair for stunnel/SSL
- 	-openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
-	-change storage location of keys to where you wish.
-* stunnel: Declare key location in stunnel.conf file (where is the config file stored?)	
-* stunnel: Declare pid in stunnel.conf	
-* stunnel: Add to stunnel.conf file: 
+* Using openssl: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
+	-This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
+* stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
+* stunnel: Declare pid of stunnel in stunnel.conf	
+* stunnel: Add the following to the stunnel.conf file: 
 		[lair]
 		accept=11014 port ; port you've set to have drones connect to.
 		connect=127.0.0.1:11015 ; port you've set MongoDB to listen on.
@@ -150,6 +160,8 @@ Example:
 	-launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets mongo to run as a daemon, sets log path
 
 * Start HTTP Proxy/Server
+	
+	- 
 * Server is up and running available on whichever port you set it to.
 * Distribute Lair-Drones to clients. Find those and the relevant info here: [Lair-Drones](#drones)
 		 
