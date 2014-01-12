@@ -13,6 +13,7 @@ Lair is a web application framework written in Meteor.js. It's goal is _______.
 
 ##<a name="whatis"></a> What is Lair?
 
+Lair is _________
 
 
 Data sets are sorted into projects, for coherence, while data within projects are sorted by
