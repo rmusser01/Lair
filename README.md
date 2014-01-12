@@ -3,7 +3,7 @@ Lair is a web application framework written in Meteor.js. It's goal is _______.
 
 [What is Lair?](#whatis)
 
-[Temporary/Quick Install](#quick)https://github.com/rmusser01/Lair/edit/master/README.md#
+[Temporary/Quick Install](#quick)
 
 [Longterm Install](#long)
 
