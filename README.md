@@ -96,9 +96,9 @@ To stop Lair and the dependent services:
 Running the start.sh script performs the following:
 * Installs stunnel
 * Edits stunnel.conf file
-* Generates keypair for SSL using openssl
+* Generates keypair for SSL using OpenSSL
 * Installs Node.js+Meteor.js+Lair application
-* Creates mongoDB db for Lair as well as users/admins for said db
+* Creates MongoDB db for Lair as well as users/admins for said db
 * Launches MongoDB daemon listener on 127d.0.0.1:11015
 * Launches Node.js web server on 127.0.0.1:11016 ; hosts  Lair application
 * Launches Node.js proxy, listening on 127.0.0.1:11013 ; Downgrades SSL connections to HTTP for communication between the server and application running on server
@@ -156,18 +156,20 @@ Required Applications:
 	        	
 Steps performed in Short:
 * Install stunnel
+* Generate SSL keypair
 * Edit stunnel.conf file
-* Install Node.js+Meteor.js
-* Create mongoDB db for Lair as well as users/admins for said db
+* Install Node.js
+* Meteor.js (comes with Lair app?)
+* Create MongoDB db for Lair as well as users/admins for said db
 * Launch MongoDB daemon listener on 127.0.0.1:11015
 * Launch Node.js web server on 127.0.0.1:11016
 * Launch Node.js proxy listening on 127.0.0.1:11013
 
 Walkthrough Installation:
 * Install Node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-* Install Meteor.js
+* Install Meteor.js (comes with Lair app?)
 * Generate key pair for stunnel/SSL
-* Using openssl: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
+* Using OpenSSL: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
 	-This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
 * stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
 * stunnel: Declare pid of stunnel in stunnel.conf	
@@ -180,7 +182,7 @@ Walkthrough Installation:
  
 	-Dropping files into meteor: http://docs.meteor.com/#structuringyourapp
         
-* Create  mongoDB admin/pass & Lair DB Username/Password
+* Create  MongoDB admin/pass & Lair DB Username/Password
 
 	        -How to do that:
 	
@@ -190,7 +192,7 @@ Example:
 
 	# /path/to/mongod --port 11015 --auth --dbpath=lair_db --bind_ip 127.0.0.1 --nohttpinterface --fork --logpath=deps/var/log/mongodb.log 1>/dev/null 2>error.log			
 				
-	-launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets mongo to run as a daemon, sets log path
+	-launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets Mongo to run as a daemon, sets log path
 
 * Start Node HTTP Proxy/Server
 	- Instructions here
