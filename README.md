@@ -186,6 +186,8 @@ Walkthrough Installation:
 
 	        -How to do that:
 	
+* Set indexes of MongoDB DB.	
+	
 * Launch MongoDB, Declare IP/Port, Declare DB/Log location
 
 Example:	
