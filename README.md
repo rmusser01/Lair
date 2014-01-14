@@ -184,7 +184,7 @@ Walkthrough Installation:
         
 * Create  MongoDB admin/pass & Lair DB Username/Password
 
-	        -How to do that:
+	        -How to do that: copout: [Getting started with Mongo](http://docs.mongodb.org/manual/tutorial/getting-started/)
 	
 * Set indexes of MongoDB DB.	
 	
