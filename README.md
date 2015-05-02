@@ -1,6 +1,6 @@
 Lair: An Attack Collaboration Framework
 ===========================================
- Lair is a reactive attack collaboration framework and web application built with meteor.js.
+ A reactive attack collaboration framework and web application built with meteor.js.
 
 
 [What is Lair?](#whatis)
