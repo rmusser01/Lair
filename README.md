@@ -142,11 +142,12 @@ For the source code, check that out here:
 -------------------------------------
 <a name="long">Setting up a Development Environment in Linux</a>
 -------------------------------------
-
-Currently Supported OS's : Linux; OS X(Intel).
-
+* <a name="linux">Setting up a Development Environment in Linux</a>
+* <a name="osx">Setting up a Development Environment in OS X</a>
+-------------------------------------
+<a name="linux">##Setting up a Development Environment in Linux##</a>
+-------------------------------------
 Required Applications:
-
 * Node.js : Platform built on Chrome's JavaScript runtime for building Javascript applications. (https://www.nodejs.org)
 * Meteor : Javascript Framework for building web applications. ( https://www.meteor.com/ )
 * stunnel :  Multiplatform GNU/GPL-licensed proxy encrypting arbitrary TCP connections with SSL/TLS. ( https://www.stunnel.org/index.html ) 
@@ -172,36 +173,60 @@ Walkthrough Installation:
 * Generate key pair for stunnel/SSL
   * Using OpenSSL: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
   * This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
-* stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
-* stunnel: Declare pid of stunnel in stunnel.conf	
-* stunnel: Add the following to the stunnel.conf file: 
+  * stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
+  * stunnel: Declare pid of stunnel in stunnel.conf	
+  * stunnel: Add the following to the stunnel.conf file: 
 		[lair]
 		accept=11014 port ; port you've set to have drones connect to.
 		connect=127.0.0.1:11015 ; port you've set MongoDB to listen on.
 * Launch stunnel
 * Drop the Lair app [available here] (https://github.com/fishnetsecurity/Lair/tree/master/app) into Meteor
- 
-	-Dropping files into meteor: http://docs.meteor.com/#structuringyourapp
+ *  Dropping files into meteor: http://docs.meteor.com/#structuringyourapp
         
 * Create  MongoDB admin/pass & Lair DB Username/Password
-
-	        -How to do that: copout: [Getting started with Mongo](http://docs.mongodb.org/manual/tutorial/getting-started/)
-	
+  *How to do that: copout: [Getting started with Mongo](http://docs.mongodb.org/manual/tutorial/getting-started/)
 * Set indexes of MongoDB DB.	
-	
 * Launch MongoDB, Declare IP/Port, Declare DB/Log location
 
 Example:	
 
 	# /path/to/mongod --port 11015 --auth --dbpath=lair_db --bind_ip 127.0.0.1 --nohttpinterface --fork --logpath=deps/var/log/mongodb.log 1>/dev/null 2>error.log			
-				
-	-launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets Mongo to run as a daemon, sets log path
-
+  *launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets Mongo to run as a daemon, sets log path
 * Start Node HTTP Proxy/Server
-	- Instructions here
+  *Instructions here
 * Server is up and running available on whichever port you set it to.
 * Distribute Lair-Drones to clients. Find those and the relevant info here: [Lair-Drones](#drones)
-		 
+	
+
+	         
+-------------------------------------
+<a name="osx">##Setting up a development environment (OSX)##</a>
+-------------------------------------
+1. Install mongodb 2.6.0 or later preferably with ssl support (`brew install mongodb --with-openssl`)
+2. If using SSL then perform the following to setup certs:
+  * `openssl req –new –x509 –days 365 –nodes –out mongodb-cert.crt –key out mongodb-cert.key`
+  * `cat mongodb-cert.crt mongodb-cert.key > mongodb.pem`
+  * Start Mongo with SSL support via mongod.conf or command line (`mongod —sslMode requireSSL —sslPEMKeyFile mongodb.pem`)
+3. Add a Lair database user:
+  * `mongo lair --ssl`
+  * `db.createUser({user: "lair", "pwd": "yourpassword", roles:["readWrite"]});`
+  * Confirm user authentication: `db.auth("lair", "yourpassword");`
+4. Set the appropriate Lair environment variable...
+  * With SSL:  `export MONGO_URL=mongodb://lair:yourpassword@localhost:27017/lair?ssl=true`
+  * No SSL: `export MONGO_URL=mongodb://lair:password@localhost:27017/lair`
+5. [Download](http://nodejs.org/download/) and install node.js
+6. Install Meteor: `curl https://install.meteor.com | /bin/sh`
+7. Install Meteorite package manager: `sudo npm install -g meteorite`
+8. Fork the Lair project on GitHub and clone the repo locally
+9. Install dependencies: `cd /path/to/lair/app && mrt` (you can kill the mrt process after dependencies are downloaded)
+10. Start Lair:  `cd /path/to/lair/app && meteor`
+11. Browse to http://localhost:3000
+12. Code your changes and submit pull requests!
+
+There are occasional issues and confilicts with Meteor and the Fibers module. If you run into a situation where you cannot start Meteor due to Fibers conflicts, refer to the following for potential fixes:
+* [Error: Cannot find module 'fibers'](http://stackoverflow.com/questions/15851923/cant-install-update-or-run-meteor-after-0-6-release)
+* [Error: fibers.node is missing](http://stackoverflow.com/questions/13327088/meteor-bundle-fails-because-fibers-node-is-missing)
+
 
 -------------------------------------
 <a name="contact"></a>Contact
@@ -209,9 +234,10 @@ Example:
 If you need assistance with installation, usage, or are interested in contributing, please contact either Dan Kottmann or Tom Steele at any of the below. IRC is the best way to get a quick response.
 
 Tom Steele
-- tom@huptwo34.com
+- tom@stacktitan.com
 - [@_tomsteele](https://twitter.com/_tomsteele)
-- freenode: hydrawat
 
 Dan Kottmann
+- djkottmann@gmail.com
 - [@djkottmann](https://twitter.com/djkottmann)
+
