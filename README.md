@@ -5,6 +5,8 @@ Lair: An Attack Collaboration Framework
 
 [What is Lair?](#whatis)
 
+[Demo](#demo)
+
 [Temporary/Quick Install](#quick)
 
 [Lair-Drones](#drones)
@@ -41,14 +43,14 @@ Data sets are sorted into projects, for coherence, while data within projects ar
         - A log of all commands executed along with a list of all data uploaded by drones. 
 
 
-
+-------------------------------------
+<a name="Demo">Demo</a>
+--------------------------------------------------
 Like the saying, a picture is worth a thousand words, here's a picture walkthrough of Lair in action so that you  can 
 see what it might help you do.
 
-
 In this picture, we see Lair after a fresh install/clear of all projects.
 ![Feeling Fresh](/path/to/image.jpg "FrontFresh")
-
 
 Here, we have an image of a project being created, with the name "Test", and the description "chicken".
 ![Test1](/path/to/image.jpg "Testpage")
