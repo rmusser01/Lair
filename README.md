@@ -7,7 +7,7 @@ Lair: An Attack Collaboration Framework
 
 [Temporary/Quick Install](#quick)
 
-[Build from Source](#long)
+[Creating a Build Environment](#long)
 
 [Lair-Drones](#drones)
 
@@ -88,12 +88,6 @@ Download one of the above packages; extract said package, and execute the start.
 
 with IP being the accessible IP of the Lair server. 
 
-At the end of the script, you'll be given the IP:PORT on which Lair is accessible. To start uploading information to the server, check the next section, [Drones](#drones).
-
-To stop Lair and the dependent services:
-
-        ./stop.sh
-
 Running the start.sh script performs the following:
 * Installs stunnel
 * Edits stunnel.conf file
@@ -103,6 +97,14 @@ Running the start.sh script performs the following:
 * Launches MongoDB daemon listener on 127d.0.0.1:11015
 * Launches Node.js web server on 127.0.0.1:11016 ; hosts  Lair application
 * Launches Node.js proxy, listening on 127.0.0.1:11013 ; Downgrades SSL connections to HTTP for communication between the server and application running on server
+
+At the end of the script, you'll be given the IP:PORT on which Lair is accessible. To start uploading information to the server, check the next section, [Drones](#drones).
+
+To stop Lair and the dependent services:
+
+        ./stop.sh
+
+
 
 -------------------------------------
 <a name="drones"></a>Drones
@@ -138,7 +140,7 @@ For the source code, check that out here:
 
         
 -------------------------------------
-<a name="long">Installing Lair from Source</a>
+<a name="long">Setting up a Development Environment in Linux</a>
 -------------------------------------
 
 Currently Supported OS's : Linux; OS X(Intel).
@@ -148,9 +150,7 @@ Required Applications:
 * Node.js : Platform built on Chrome's JavaScript runtime for building Javascript applications. (https://www.nodejs.org)
 * Meteor : Javascript Framework for building web applications. ( https://www.meteor.com/ )
 * stunnel :  Multiplatform GNU/GPL-licensed proxy encrypting arbitrary TCP connections with SSL/TLS. ( https://www.stunnel.org/index.html ) 
- 
-	-The Lair application uses HTTPS to authenticate with hosts and then drops the HTTPS > HTTP when  interfacing with the database.
-
+..* The Lair application uses HTTPS to authenticate with hosts and then drops the HTTPS > HTTP when  interfacing with the database.
 * openssl-devel(Redhat-based) or libssl-devel(debian based)
 * simple proxy : Currently, a simple proxy written in .js is used, though it should be possible to use another.(https://gist.github.com/tomsteele/5118594)
 * MongoDB : Document database that provides high performance, high availability, and easy scalability. ( http://www.mongodb.org )
