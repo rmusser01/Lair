@@ -124,7 +124,7 @@ For the source code, check that out here:
 <a href="https://github.com/fishnetsecurity/Lair-Drones">Lair-Drones Source</a>
 
 -------------------------------------
-<a name="long">Setting up a Development Environment in Linux</a>
+<a name="long">Building Lair from Source</a>
 -------------------------------------
 * <a name="linux">Setting up a Development Environment in Linux</a>
 * <a name="osx">Setting up a Development Environment in OS X</a>
