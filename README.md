@@ -143,9 +143,10 @@ Steps performed in Short:
 * Install stunnel
 * Generate SSL keypair
 * Edit stunnel.conf file
-* Install Node.js
-* Meteor.js (comes with Lair app?)
+* Install MongoDB
 * Create MongoDB db for Lair as well as users/admins for said db
+* Install Node.js
+* Install Meteor.js (comes with Lair app?)
 * Launch MongoDB daemon listener on 127.0.0.1:11015
 * Launch Node.js web server on 127.0.0.1:11016
 * Launch Node.js proxy listening on 127.0.0.1:11013
