@@ -11,7 +11,9 @@ Lair: An Attack Collaboration Framework
 
 [Lair-Drones](#drones)
 
-[Contact Us/Get involved!](#contact)
+[Contribute/Get involved!](#contribute)
+
+[Contact Us](#contact)
 
 ###<a name="whatis"></a> What is Lair?
 ---------------------------------------
@@ -65,26 +67,20 @@ Imports exist for Nmap, Burp, Nessus, and Nexpose. Because Lair is opensource an
 -------------------------------------
 <a name="quick"></a>Temporary/Quick Installation:
 --------------------------------------------------
-
-
 Precompiled application packages are available for Linux and OS X. Download one of the current application packages below:
 
-[lair-v1.0.4-darwin-x64.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.4/lair-v1.0.4-darwin-x64.7z)
+[lair-v1.0.5-darwin-x64.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.5/lair-v1.0.5-darwin-x64.7z)
 
-[lair-v1.0.4-linux-x64.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.4/lair-v1.0.4-linux-x64.7z)
+[lair-v1.0.5-linux-x64.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.5/lair-v1.0.5-linux-x64.7z)
 
-[lair-v1.0.4-linux-x86.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.4/lair-v1.0.4-linux-x86.7z)
+[lair-v1.0.5-linux-x86.7z](https://github.com/fishnetsecurity/Lair/releases/download/v1.0.5/lair-v1.0.5-linux-x86.7z)
 
-Next, download the latest drones python package [here](https://github.com/fishnetsecurity/Lair-Drones/releases/latest). 
+Next, download the latest drones python package [here](https://github.com/fishnetsecurity/Lair-Drones/releases/latest).
 
-Click [here](#drones) for instructions on Lair-Drones
-
-Running lair from the application package above is relatively simple.
-
-Download one of the above packages; extract said package, and execute the start.sh script:
+Running lair from the application package above is self-explanatory.
+To start Lair and all the required services:
 
         ./start.sh <ip>
-
 
 with IP being the accessible IP of the Lair server. 
 
@@ -145,7 +141,7 @@ For the source code, check that out here:
 * <a name="linux">Setting up a Development Environment in Linux</a>
 * <a name="osx">Setting up a Development Environment in OS X</a>
 -------------------------------------
-<a name="linux">##Setting up a Development Environment in Linux##</a>
+<a name="linux">Setting up a Development Environment in Linux</a>
 -------------------------------------
 Required Applications:
 * Node.js : Platform built on Chrome's JavaScript runtime for building Javascript applications. (https://www.nodejs.org)
@@ -200,7 +196,7 @@ Example:
 
 	         
 -------------------------------------
-<a name="osx">##Setting up a development environment (OSX)##</a>
+<a name="osx">Setting up a development environment (OSX)</a>
 -------------------------------------
 1. Install mongodb 2.6.0 or later preferably with ssl support (`brew install mongodb --with-openssl`)
 2. If using SSL then perform the following to setup certs:
@@ -227,6 +223,15 @@ There are occasional issues and confilicts with Meteor and the Fibers module. If
 * [Error: Cannot find module 'fibers'](http://stackoverflow.com/questions/15851923/cant-install-update-or-run-meteor-after-0-6-release)
 * [Error: fibers.node is missing](http://stackoverflow.com/questions/13327088/meteor-bundle-fails-because-fibers-node-is-missing)
 
+
+-------------------------------------
+<a name="contribute">Contributing</a>
+-------------------------------------
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request 
 
 -------------------------------------
 <a name="contact"></a>Contact
