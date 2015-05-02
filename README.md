@@ -126,8 +126,8 @@ For the source code, check that out here:
 -------------------------------------
 <a name="long">Building Lair from Source</a>
 -------------------------------------
-* <a name="linux">Setting up a Development Environment in Linux</a>
-* <a name="osx">Setting up a Development Environment in OS X</a>
+* [Setting up a Development Environment in Linux](#linux)
+* [Setting up a Development Environment in OS X](#osx)
 -------------------------------------
 <a name="linux">Setting up a Development Environment in Linux</a>
 -------------------------------------
