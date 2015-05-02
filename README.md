@@ -170,8 +170,8 @@ Walkthrough Installation:
 * Install Node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 * Install Meteor.js (comes with Lair app?)
 * Generate key pair for stunnel/SSL
-* Using OpenSSL: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
-	-This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
+  * Using OpenSSL: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
+  * This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
 * stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
 * stunnel: Declare pid of stunnel in stunnel.conf	
 * stunnel: Add the following to the stunnel.conf file: 
