@@ -130,9 +130,6 @@ For the source code, check that out here:
 * [Setting up a Development Environment in Linux](#linux)
 * [Setting up a Development Environment in OS X](#osx)
 
--------------------------------------
-<a name="linux">Setting up a Development Environment in Linux</a>
--------------------------------------
 Required Applications:
 * Node.js : Platform built on Chrome's JavaScript runtime for building Javascript applications. (https://www.nodejs.org)
 * Meteor : Javascript Framework for building web applications. ( https://www.meteor.com/ )
@@ -141,7 +138,7 @@ Required Applications:
 * openssl-devel(Redhat-based) or libssl-devel(debian based)
 * simple proxy : Currently, a simple proxy written in .js is used, though it should be possible to use another.(https://gist.github.com/tomsteele/5118594)
 * MongoDB : Document database that provides high performance, high availability, and easy scalability. ( http://www.mongodb.org )
-	        	
+
 Steps performed in Short:
 * Install stunnel
 * Generate SSL keypair
@@ -152,11 +149,14 @@ Steps performed in Short:
 * Launch MongoDB daemon listener on 127.0.0.1:11015
 * Launch Node.js web server on 127.0.0.1:11016
 * Launch Node.js proxy listening on 127.0.0.1:11013
+* 
 
-Walkthrough Installation:
-* Install Node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-* Install Meteor.js (comes with Lair app?)
-* Generate key pair for stunnel/SSL
+-------------------------------------
+<a name="linux">Setting up a Development Environment in Linux</a>
+-------------------------------------
+1. Install Node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+2. Install Meteor.js (comes with Lair app?)
+3. Generate key pair for stunnel/SSL
   * Using OpenSSL: # openssl req -new -x509 -days 3095 -nodes -out /place/to/save/key/lair.pem -keyout /place/to/save/key/lair-key.pem
   * This command causes OpenSSL to create a new key pair. Change storage location of keys to where you wish. 
   * stunnel: Declare key location in stunnel.conf file (where is the config file stored?^^^)	
@@ -165,23 +165,23 @@ Walkthrough Installation:
 		[lair]
 		accept=11014 port ; port you've set to have drones connect to.
 		connect=127.0.0.1:11015 ; port you've set MongoDB to listen on.
-* Launch stunnel
-* Drop the Lair app [available here] (https://github.com/fishnetsecurity/Lair/tree/master/app) into Meteor
+4. Launch stunnel
+5. Drop the Lair app [available here] (https://github.com/fishnetsecurity/Lair/tree/master/app) into Meteor
  *  Dropping files into meteor: http://docs.meteor.com/#structuringyourapp
         
-* Create  MongoDB admin/pass & Lair DB Username/Password
-  *How to do that: copout: [Getting started with Mongo](http://docs.mongodb.org/manual/tutorial/getting-started/)
-* Set indexes of MongoDB DB.	
-* Launch MongoDB, Declare IP/Port, Declare DB/Log location
+6. Create  MongoDB admin/pass & Lair DB Username/Password
+  * How to do that: copout: [Getting started with Mongo](http://docs.mongodb.org/manual/tutorial/getting-started/)
+7. Set indexes of MongoDB DB.	
+8. Launch MongoDB, Declare IP/Port, Declare DB/Log location
 
-Example:	
+  * Example:	
 
 	# /path/to/mongod --port 11015 --auth --dbpath=lair_db --bind_ip 127.0.0.1 --nohttpinterface --fork --logpath=deps/var/log/mongodb.log 1>/dev/null 2>error.log			
   *launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets Mongo to run as a daemon, sets log path
-* Start Node HTTP Proxy/Server
-  *Instructions here
-* Server is up and running available on whichever port you set it to.
-* Distribute Lair-Drones to clients. Find those and the relevant info here: [Lair-Drones](#drones)
+9. Start Node HTTP Proxy/Server
+  * Instructions here
+10. Server is up and running available on whichever port you set it to.
+11. Distribute Lair-Drones to clients. Find those and the relevant info here: [Lair-Drones](#drones)
 	
 
 	         
