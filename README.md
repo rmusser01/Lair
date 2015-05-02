@@ -150,7 +150,7 @@ Required Applications:
 * Node.js : Platform built on Chrome's JavaScript runtime for building Javascript applications. (https://www.nodejs.org)
 * Meteor : Javascript Framework for building web applications. ( https://www.meteor.com/ )
 * stunnel :  Multiplatform GNU/GPL-licensed proxy encrypting arbitrary TCP connections with SSL/TLS. ( https://www.stunnel.org/index.html ) 
-..* The Lair application uses HTTPS to authenticate with hosts and then drops the HTTPS > HTTP when  interfacing with the database.
+  * The Lair application uses HTTPS to authenticate with hosts and then drops the HTTPS > HTTP when  interfacing with the database.
 * openssl-devel(Redhat-based) or libssl-devel(debian based)
 * simple proxy : Currently, a simple proxy written in .js is used, though it should be possible to use another.(https://gist.github.com/tomsteele/5118594)
 * MongoDB : Document database that provides high performance, high availability, and easy scalability. ( http://www.mongodb.org )
