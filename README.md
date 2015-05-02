@@ -17,7 +17,7 @@ Lair: An Attack Collaboration Framework
 
 ###<a name="whatis"></a> What is Lair?
 ---------------------------------------
-Lair is _________
+Lair is a reactive attack collaboration framework and web application built with meteor.js.
 
 Lair operates off the client server model, with a series of packaged python scripts("Drones") that resides on the user's machine, which are used to authenticate and upload scan results into the server application.
 
