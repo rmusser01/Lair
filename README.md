@@ -7,9 +7,9 @@ Lair: An Attack Collaboration Framework
 
 [Temporary/Quick Install](#quick)
 
-[Creating a Build Environment](#long)
-
 [Lair-Drones](#drones)
+
+[Creating a Build Environment](#long)
 
 [Contribute/Get involved!](#contribute)
 
@@ -149,7 +149,7 @@ Steps performed in Short:
 * Launch MongoDB daemon listener on 127.0.0.1:11015
 * Launch Node.js web server on 127.0.0.1:11016
 * Launch Node.js proxy listening on 127.0.0.1:11013
-* 
+* Browse to Lair Server on designated server IP.
 
 -------------------------------------
 <a name="linux">Setting up a Development Environment in Linux</a>
@@ -175,7 +175,6 @@ Steps performed in Short:
 8. Launch MongoDB, Declare IP/Port, Declare DB/Log location
 
   * Example:	
-
 	# /path/to/mongod --port 11015 --auth --dbpath=lair_db --bind_ip 127.0.0.1 --nohttpinterface --fork --logpath=deps/var/log/mongodb.log 1>/dev/null 2>error.log			
   *launches mongodb daemon, specifies listen port as 11015, enables db auth from remote hosts, defines where db path will be/is, binds listener ip as 127.0.0.1, disables http interface, --fork sets Mongo to run as a daemon, sets log path
 9. Start Node HTTP Proxy/Server
