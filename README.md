@@ -7,7 +7,7 @@ Lair: An Attack Collaboration Framework
 
 [Temporary/Quick Install](#quick)
 
-[Longterm Install](#long)
+[Build from Source](#long)
 
 [Lair-Drones](#drones)
 
