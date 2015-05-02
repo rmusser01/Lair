@@ -138,7 +138,7 @@ For the source code, check that out here:
 
         
 -------------------------------------
-<a name="long"></a>Installing Lair
+<a name="long">Installing Lair from Source</a>
 -------------------------------------
 
 Currently Supported OS's : Linux; OS X(Intel).
